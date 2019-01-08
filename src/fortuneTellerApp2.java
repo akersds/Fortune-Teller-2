@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class fortuneTellerApp2 {
+public class FortuneTellerApp2 {
 
 	public static void main(String[] args) {
 
@@ -14,12 +14,6 @@ public class fortuneTellerApp2 {
 
 		System.out.println("Welcome " + firstName + " to Fortune Teller!");
 		System.out.println();
-
-		System.out.println("What is your age?");
-		int numberAge = input.nextInt();
-
-		System.out.println("What month were you born?");
-		int numberMonth = input.nextInt();
 
 		System.out.println("What is your favorite ROYGBIV color? If you don't recognize these colors enter help");
 		String favoriteROYGBIV = input.next();
@@ -71,15 +65,36 @@ public class fortuneTellerApp2 {
 		} else if (numberSiblings > 0) {
 			vacationHome = "Calcutta, India";
 
-		System.out.println("Enter your age");
-			
-			int ageNumber = input.nextInt();
-			int yearsRetire;
-			if (ageNumber % 2 == 0) {
-				yearsRetire = 10;
-			} else {
-				yearsRetire = 12;
-			}
 		}
+
+		System.out.println("Enter your age");
+
+		int ageNumber = input.nextInt();
+		int yearsRetire;
+		if (ageNumber % 2 == 0) {
+			yearsRetire = 10;
+		} else {
+			yearsRetire = 12;
+		}
+
+		System.out.println("Enter your birth month");
+		int birthMonth = input.nextInt();
+
+		String bank;
+		if (birthMonth >= 1 && birthMonth <= 4) {
+			bank = "$1,000.00";
+		} else if (birthMonth >= 5 && birthMonth <= 8) {
+			bank = "$2,000.00";
+		} else if (birthMonth >= 9 && birthMonth <= 12) {
+			bank = "$320.00";
+		} else {
+			bank = "$0.00";
+		}
+
+		input.close();
+
+		System.out.println(firstName + " " + lastName + " will retire in " + yearsRetire + " years with " + bank
+				+ " in the bank, a vacation home in " + vacationHome + ", and travel by " + transport + ".");
+
 	}
 }
